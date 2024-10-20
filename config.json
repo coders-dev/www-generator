@@ -1,0 +1,192 @@
+{
+  "Title": "Golang Boilerplate",
+  "Language": "en",
+  "Copyright": "Golang Boilerplate and Coders",
+  "Analytics": {
+    "GoogleTag": ""
+  },
+  "Hero": {
+    "Title": "Golang Boilerplate",
+    "Paragraph": "Empower Your Team To Build Robust Go Applications Quickly",
+    "CtaButton": "",
+    "CtaButton2": ""
+  },
+  "Features": [
+    {
+      "Title": "Axios",
+      "Paragraph": "",
+      "ImageURL": "images/features/axios.svg"
+    },
+    {
+      "Title": "Docker",
+      "Paragraph": "",
+      "ImageURL": "images/features/docker.svg"
+    },
+    
+    {
+      "Title": "Fiber",
+      "Paragraph": "",
+      "ImageURL": "images/features/fiber-dark.svg"
+    },
+    {
+      "Title": "Golang",
+      "Paragraph": "",
+      "ImageURL": "images/features/go.svg"
+    },
+    {
+      "Title": "GORM",
+      "Paragraph": "",
+      "ImageURL": "images/features/gorm.svg"
+    },
+    {
+      "Title": "Postgres",
+      "Paragraph": "",
+      "ImageURL": "images/features/postgres.svg"
+    },
+    {
+      "Title": "GCP, AWS, Azures",
+      "Paragraph": "",
+      "ImageURL": "images/features/clouds.svg"
+    },
+    {
+      "Title": "Redis",
+      "Paragraph": "",
+      "ImageURL": "images/features/redis.svg"
+    },
+    {
+      "Title": "React",
+      "Paragraph": "",
+      "ImageURL": "images/features/react.svg"
+    }
+  ],
+  "Tools": [
+    {
+      "Title": "Axios",
+      "Paragraph": "",
+      "ImageURL": "images/features/axios.svg"
+    },
+    {
+      "Title": "Docker",
+      "Paragraph": "",
+      "ImageURL": "images/features/docker.svg"
+    },
+    
+    {
+      "Title": "Fiber",
+      "Paragraph": "",
+      "ImageURL": "images/features/fiber-dark.svg"
+    },
+    {
+      "Title": "Golang",
+      "Paragraph": "",
+      "ImageURL": "images/features/go.svg"
+    },
+    {
+      "Title": "GORM",
+      "Paragraph": "",
+      "ImageURL": "images/features/gorm.svg"
+    },
+    {
+      "Title": "Postgres",
+      "Paragraph": "",
+      "ImageURL": "images/features/postgres.svg"
+    },
+    {
+      "Title": "GCP, AWS, Azures",
+      "Paragraph": "",
+      "ImageURL": "images/features/clouds.svg"
+    },
+    {
+      "Title": "Redis",
+      "Paragraph": "",
+      "ImageURL": "images/features/redis.svg"
+    },
+    {
+      "Title": "React",
+      "Paragraph": "",
+      "ImageURL": "images/features/react.svg"
+    }
+  ],
+  "Pricing": {
+    "Enabled": false,
+    "Title": "Right price for any size",
+    "Paragraph": "Get only what you need",
+    "Prices": [
+      {
+        "Currency": "$",
+        "Amount": 10,
+        "BillingCycle": "Once",
+        "Features": ["Simple", "Email"]
+      }
+    ]
+  },
+  "Cta": {
+    "Enabled": false,
+    "Title": "Still not convinced on buying?",
+    "Button": "Get in touch"
+  },
+  "Footer": {
+    "Links": [
+      {
+        "URL": "#form",
+        "Title": "Contact"
+      },
+      {
+        "URL": "#features",
+        "Title": "About"
+      },
+      {
+        "URL": "#",
+        "Title": "FAQ"
+      },
+      {
+        "URL": "#",
+        "Title": "Support"
+      }
+    ],
+    "Social": [
+      {
+        "ImageURL": "images/social/facebook.svg",
+        "Title": "Facebook"
+      },
+      {
+        "ImageURL": "images/social/twitter.svg",
+        "Title": "Twitter/X"
+      },
+      {
+        "ImageURL": "images/social/google.svg",
+        "Title": "Google"
+      },
+      {
+        "ImageURL": "images/social/github.svg",
+        "Title": "Github"
+      }
+    ]
+  },
+  "Year": {
+    "From": 2020,
+    "To": 2024
+  },
+  "Form": [
+    {
+      "Question": "How should we call you?",
+      "Name": "name",
+      "Type": "text"
+    },
+    {
+      "Question": "What is your best email?",
+      "Name": "email",
+      "Type": "email"
+    },
+    {
+      "Question": "I work as:",
+      "Name": "role",
+      "Type": "text"
+    },
+    {
+      "Question": "I'd like to share:",
+      "Name": "message",
+      "Type": "textarea"
+    }
+  ]
+}

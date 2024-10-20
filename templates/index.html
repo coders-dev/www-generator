@@ -1,0 +1,507 @@
+<html lang="{{ .Language }}" class="sr js anime-ready">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Title }}</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/images/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/images/safari-pinned-tab.svg"
+      color="#ffffff"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  </head>
+  <body class="is-boxed has-animations" style="height: 100%">
+    <div class="body-wrap">
+      <header class="site-header">
+        <div class="container">
+          <div class="site-header-inner">
+            <div class="brand header-brand">
+              <h1 class="m-0">
+                <a href="#">
+                  <img
+                    class="header-logo-image"
+                    src="images/logo.svg"
+                    alt="Logo"
+                  />
+                </a>
+
+                <!-- TODO: Add coders logo sided-->
+              </h1>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="hero" class="hero">
+          <div class="container">
+            <div class="hero-inner">
+              <div class="hero-copy">
+                <h1 class="hero-title mt-0">{{ .Hero.Title }}</h1>
+                <p class="hero-paragraph">{{ .Hero.Paragraph }}</p>
+                <div class="hero-cta">
+                  {{ if ne .Hero.CtaButton "" }}
+                  <a class="button button-primary" href="#"
+                    >{{ .Hero.CtaButton }}</a
+                  >
+                  {{ end }} {{ if ne .Hero.CtaButton2 "" }}
+                  <a class="button" href="#">{{ .Hero.CtaButton2 }}</a>
+                  {{ end }}
+                </div>
+              </div>
+
+              <!-- Animated -->
+              <div class="hero-figure anime-element">
+                <svg
+                  class="placeholder"
+                  width="528"
+                  height="396"
+                  viewBox="0 0 528 396"
+                >
+                  <rect
+                    width="528"
+                    height="396"
+                    style="fill: transparent"
+                  ></rect>
+                </svg>
+                <div
+                  class="hero-figure-box hero-figure-box-01"
+                  data-rotation="45deg"
+                  style="transform: rotate(45deg) scale(1); opacity: 1"
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-02"
+                  data-rotation="-45deg"
+                  style="transform: rotate(-45deg) scale(1); opacity: 1"
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-03"
+                  data-rotation="0deg"
+                  style="transform: rotate(0deg) scale(1); opacity: 1"
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-04"
+                  data-rotation="-135deg"
+                  style="transform: rotate(-135deg) scale(1); opacity: 1"
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-05"
+                  style="
+                    transform: scaleX(1) scaleY(1) perspective(500px)
+                      rotateY(-15deg) rotateX(8deg) rotateZ(-1deg);
+                  "
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-06"
+                  style="
+                    transform: scaleX(1) scaleY(1) perspective(500px)
+                      rotateZ(20deg);
+                  "
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-07"
+                  style="
+                    transform: scaleX(1) scaleY(1) perspective(500px)
+                      rotateZ(20deg);
+                  "
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-08"
+                  data-rotation="-22deg"
+                  style="transform: rotate(-22deg) scale(1); opacity: 1"
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-09"
+                  data-rotation="-52deg"
+                  style="transform: rotate(-52deg) scale(1); opacity: 1"
+                ></div>
+                <div
+                  class="hero-figure-box hero-figure-box-10"
+                  data-rotation="-50deg"
+                  style="transform: rotate(-50deg) scale(1); opacity: 1"
+                ></div>
+              </div>
+              <!-- End Animated -->
+            </div>
+          </div>
+        </section>
+
+        <section id="tools" class="features section">
+          <div class="container">
+            <div class="features-inner section-inner has-bottom-divider">
+              <div class="features-wrap">
+                {{ range $idx, $feature := .Tools }}
+                <div
+                  class="feature text-center is-revealing"
+                  style="visibility: visible"
+                >
+                  <div class="feature-inner">
+                    <div class="feature-icon">
+                      {{ if ne $feature.ImageURL "" }}
+                      <img
+                        class="feature-image"
+                        src="{{ $feature.ImageURL }}"
+                        alt="{{ $feature.Title }} Image"
+                      />
+                      {{ else }}
+                      <img
+                        class="feature-image"
+                        src="images/feature-icon-{{ $idx }}.svg"
+                        alt="{{ $feature.Title }} Image"
+                      />
+                      {{ end }}
+                    </div>
+                    <h4 class="feature-title mt-24">{{ $feature.Title }}</h4>
+                    {{ if ne $feature.Paragraph "" }}
+                    <p class="text-sm mb-0">{{ $feature.Paragraph }}</p>
+                    {{ end }}
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="features section"></section>
+          <div class="container">
+            <div class="features-inner section-inner has-bottom-divider">
+              <div class="features-wrap">
+                {{ range $idx, $feature := .Features }}
+                <div
+                  class="feature text-center is-revealing"
+                  style="visibility: visible"
+                >
+                  <div class="feature-inner">
+                    <div class="feature-icon">
+                      {{ if ne $feature.ImageURL "" }}
+                      <img
+                        class="feature-image"
+                        src="{{ $feature.ImageURL }}"
+                        alt="{{ $feature.Title }} Image"
+                      />
+                      {{ else }}
+                      <img
+                        class="feature-image"
+                        src="images/feature-icon-{{ $idx }}.svg"
+                        alt="{{ $feature.Title }} Image"
+                      />
+                      {{ end }}
+                    </div>
+                    <h4 class="feature-title mt-24">{{ $feature.Title }}</h4>
+                    {{ if ne $feature.Paragraph "" }}
+                    <p class="text-sm mb-0">{{ $feature.Paragraph }}</p>
+                    {{ end }}
+                  </div>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {{ if .Pricing.Enabled }}
+        <section id="pricing" class="pricing section">
+          <div class="container-sm">
+            <div class="pricing-inner section-inner">
+              <div class="pricing-header text-center">
+                <h2 class="section-title mt-0">{{ .Pricing.Title }}</h2>
+                <p class="section-paragraph mb-0">{{ .Pricing.Paragraph }}</p>
+              </div>
+              <div class="pricing-tables-wrap">
+                <div class="pricing-table">
+                  {{ range $price := .Pricing.Prices }}
+                  <div
+                    class="pricing-table-inner is-revealing"
+                    style="visibility: visible"
+                  >
+                    <div class="pricing-table-main">
+                      <div class="pricing-table-header pb-24">
+                        <div class="pricing-table-price">
+                          <span class="pricing-table-price-currency h2"
+                            >{{ $price.Currency }}</span
+                          ><span class="pricing-table-price-amount h1"
+                            >{{ $price.Amount }}</span
+                          ><span class="text-xs"
+                            >/{{ $price.BillingCycle }}</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="pricing-table-features-title text-xs pt-24 pb-24"
+                      >
+                        What you will get
+                      </div>
+                      <ul class="pricing-table-features list-reset text-xs">
+                        {{ range $feature := $price.Features }}
+                        <li>
+                          <span>{{ $feature }}</span>
+                        </li>
+                        {{ end }}
+                      </ul>
+                    </div>
+                    <div class="pricing-table-cta mb-8">
+                      <a
+                        class="button button-primary button-shadow button-block"
+                        href="#"
+                        >Pre order now</a
+                      >
+                    </div>
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {{ end }}
+
+        
+
+        {{ if .Cta.Enabled }}
+        <section id="cta" class="cta section">
+          <div class="container">
+            <div class="cta-inner section-inner">
+              <h3 class="section-title mt-0">{{ .Cta.Title }}</h3>
+              <div class="cta-cta">
+                <a class="button button-primary button-wide-mobile" href="#"
+                  >{{ .Cta.Button }}</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        {{ end }}
+
+        <section id="form" class="section form"></section>
+          <div class="container">
+            <div class="section-inner">
+              <form name="contact" method="POST" netlify>
+                {{ range $item := .Form }}
+                <p>
+                  <label>
+                    {{ $item.Question }} {{ if eq $item.Type "email"}}
+                    <input class="input" type="email" name="{{$item.Name}}" />
+                    {{ end }} {{ if eq $item.Type "text"}}
+                    <input class="input" type="text" name="{{$item.Name}}" />
+                    {{ end }} {{ if eq $item.Type "textarea"}}
+                    <textarea class="textarea" name="{{$item.Name}}"></textarea>
+                    {{ end }}
+                  </label>
+                </p>
+                {{ end }}
+                <button type="submit" class="button">Send</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="site-footer-inner">
+            <div class="brand footer-brand">
+              <a href="#">
+                <img
+                  class="header-logo-image"
+                  src="images/logo.svg"
+                  alt="Logo"
+                />
+              </a>
+            </div>
+            <ul class="footer-links list-reset">
+              {{ range $link := .Footer.Links }}
+              <li>
+                <a href="{{ $link.URL }}">{{ $link.Title }}</a>
+              </li>
+              {{ end }}
+            </ul>
+            <ul class="footer-social-links list-reset">
+              {{ range $social := .Footer.Social }}
+              <li>
+                <a href="#">
+                  <span class="screen-reader-text">{{ $social.Title }}</span>
+                  <img
+                    class="social-logo-image"
+                    src="{{ $social.ImageURL }}"
+                    alt="{{ $social.Title }} Logo"
+                  />
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+            <div class="footer-copyright">
+              © {{ .Year.From }} - {{ .Year.To }} {{ .Copyright }}, all rights
+              reserved
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/main.min.js"></script>
+
+    {{ if ne .Analytics.GoogleTag "" }}
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{ .Analytics.GoogleTag }}"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "{{ .Analytics.GoogleTag }}");
+    </script>
+    {{ end }}
+
+    <!-- <div id="banner" class="banner-outer">
+      <div class="banner-inner">
+        <a class="banner-link" href="https://cruip.com/"
+          ><span>✨ Check out more beautiful templates on Cruip.com</span
+          ><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11">
+            <path
+              fill="#6366F1"
+              fill-rule="evenodd"
+              d="m5.979 10.184-.895-.885 3.108-3.107H.386V4.899h7.806L5.084 1.797l.895-.89 4.639 4.639z"
+            ></path></svg></a
+        ><button onclick="closeBanner()">
+          <span class="sr-only">Close</span
+          ><svg viewBox="0 0 16 16" width="16" height="16">
+            <path
+              fill="#64748B"
+              d="M12.72 3.293a1 1 0 00-1.415 0L8.012 6.586 4.72 3.293a1 1 0 00-1.414 1.414L6.598 8l-3.293 3.293a1 1 0 101.414 1.414l3.293-3.293 3.293 3.293a1 1 0 001.414-1.414L9.426 8l3.293-3.293a1 1 0 000-1.414z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div> 
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap);
+      .banner-outer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        z-index: 60;
+      }
+      .banner-inner {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        background: #0f172a;
+        padding: 12px 16px;
+        border-radius: 2px;
+        font-size: 14px;
+        font-family: Inter, sans-serif;
+        font-weight: 500;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+          0 4px 6px -4px rgb(0 0 0 / 0.1);
+      }
+      .banner-link {
+        flex-grow: 1;
+        display: flex;
+        color: #f8fafc;
+        justify-items: center;
+        align-items: center;
+        text-decoration: none;
+      }
+      .banner-link:hover {
+        text-decoration: none;
+      }
+      .banner-link > svg {
+        margin-left: 8px;
+      }
+      .banner-inner button {
+        font-family: inherit;
+        font-size: 100%;
+        font-weight: inherit;
+        line-height: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+        margin-left: 24px;
+        padding-left: 8px;
+        border: none;
+        cursor: pointer;
+        border-left: 1px solid #334155;
+        -webkit-appearance: button;
+        appearance: button;
+        background-color: transparent;
+        background-image: none;
+      }
+      .banner-inner button span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+      @media screen and (min-width: 768px) {
+        .banner-outer {
+          bottom: 32px;
+          right: 48px;
+          width: auto;
+        }
+      }
+    </style>
+    <script>
+      function closeBanner() {
+        document.getElementById("banner").remove();
+      }
+    </script>
+    -->
+
+    <!-- <script
+      defer=""
+      src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"rayId":"8cd5f341085f1acc","version":"2024.8.0","r":1,"token":"59cc17d45d734f9ba118c63036ab1b84","serverTiming":{"name":{"cfExtPri":true,"cfL4":true}}}'
+      crossorigin="anonymous"
+    ></script> -->
+  </body>
+</html>
